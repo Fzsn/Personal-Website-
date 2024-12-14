@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+
+/* Background Image */
+body {
+    background-image: url(images/backgroundpic.png); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    color: white; /* Ensure text stands out */
+    background-color: black;
+    padding-top: 150px; /* Push content below the header height */
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: black;
+    height: 150px;
+}
+
+/* Logo Styling */
+.logo-container .logo {
+    height: 200px;
+    width: auto;
+    margin-left: 25px;
+}
+
+/* Navigation Styles */
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: #004aad;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav .nav-links li a:hover {
+    color: lightblue;
+}
+
+/* Table Styles */
+.table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 30px;
+}
+
+/* Table Cell with Effects */
+.table td {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    background: #272727; /* Dark background for the table cell */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Glow Effect */
+.table td::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 58%, rgba(0,212,255,1) 100%); /* Gradient glow */
+    border-radius: 10px;
+    opacity: 0;
+    filter: blur(20px);
+    z-index: -1; /* Ensure the glow stays behind the content */
+    transition: opacity 0.5s, transform 0.3s ease-in-out;
+}
+
+.table td:hover::after {
+    opacity: 1;
+    transform: scale(1.1); /* Slight scale-up for hover effect */
+}
+
+.table td:hover {
+    transform: scale(1.02); /* Slight scale-up for the entire cell */
+    z-index: 2; /* Ensure it appears on top */
+}
+
+/* Image Styling */
+.profilepic {
+    width: 100%; /* Make the image fill the container's width */
+    height: 300%; /* Make the image fill the container's height */
+    object-fit: cover; /* Scale image proportionally to cover the container */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    display: block; /* Ensure it behaves like a block element */
+}
+
+/* Adjust Table Cell with Images */
+.table td {
+    width: 250px; /* Set container width */
+    height: 250px; /* Set container height */
+    background-color: #272727; /* Optional: Add a consistent background */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    overflow: hidden; /* Prevent images from spilling out of the container */
+}
+
+/* Cell with Text Information */
+.basicInfo {
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 30px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* Specific Table Rules for Goals, Motivation, and Interests */
+.table td.Goals, .table td.motivation, .table td.interests {
+    padding: 50px;
+    margin: 0;
+}

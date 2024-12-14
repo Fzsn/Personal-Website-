@@ -1,0 +1,122 @@
+/* General Reset */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+
+/* Background Image */
+body {
+    background-image: url(images/backgroundpic.png); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    color: white;
+    background-color: black;
+    padding-top: 150px;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: black;
+    height: 150px; 
+}
+
+/* Logo Styling */
+.logo-container .logo {
+    height: 200px;
+    width: auto;
+    margin-left: 25px;
+}
+
+/* Navigation Styles */
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: #004aad;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav .nav-links li a:hover {
+    color: lightblue;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #000; /* Black background for the contact section */
+    color: #fff;
+    border-radius: 10px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    
+}
+
+.contact-section h2 {
+    font-size: 2.2rem; /* Slightly larger heading */
+    color: #004aad; /* Blue color for the heading */
+    margin-bottom: 20px;
+}
+
+/* Contact List Styles */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px; /* More spacing between items */
+    font-size: 1.2rem; /* Larger text for contact items */
+    color: white;
+}
+
+.contact-list li img {
+    width: 28px; /* Larger icon size */
+    height: 28px; /* Larger icon size */
+    margin-right: 12px; /* Slightly more spacing */
+    filter: brightness(0) invert(1); /* Make icons white */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.contact-list li img:hover {
+    filter: none; /* Show original colors when hovered */
+}
+
+.contact-list li a {
+    color: white; /* Keep link color white */
+    font-size: 1.2rem; /* Ensure link font size matches text */
+    text-decoration: none;
+}
+
+.contact-list li a:hover {
+    text-decoration: underline;
+}

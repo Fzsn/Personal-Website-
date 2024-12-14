@@ -1,0 +1,164 @@
+/* General Reset */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+
+/* Background Image */
+body {
+    background-image: url(images/backgroundpic.png); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    color: white; /* Ensure text stands out */
+    background-color: black;
+    padding-top: 150px; /* Push content below the header height */
+}
+
+/* Header Styles */
+header {
+    position: fixed; /* Keep the header fixed on scroll */
+    top: 0; /* Align it to the top of the page */
+    left: 0; /* Align it to the left of the page */
+    width: 100%; /* Ensure it spans the full width of the page */
+    z-index: 1000; /* Ensure it stays above other elements */
+    display: flex;
+    justify-content: space-between; /* Separate logo and navigation */
+    align-items: center;
+    padding: 1px 1px;
+    background-color: black; /* Solid black header background */
+    height: 150px; 
+}
+
+/* Logo Styling */
+.logo-container .logo {
+    height: 200px; /* Adjust logo height */
+    width: auto; /* Maintain aspect ratio */
+    margin-left: 25px;
+}
+
+/* Navigation Styles */
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Space between links */
+    margin-right: 50px;
+}
+
+nav .nav-links li a {
+    text-decoration: none; /* Remove link underline */
+    color: #004aad; /* Link text color */
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav .nav-links li a:hover {
+    color: lightblue; /* Highlight color on hover */
+}
+
+/* Table Layout */
+table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    vertical-align: top;
+    padding: 20px;
+    width: 33%;
+    color: white;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Image Styling */
+.sister, .father, .mother {
+    height: 100%; /* Fill the height of the container */
+    width: 100%; /* Fill the width of the container */
+    object-fit: cover; /* Ensure the image covers the container area */
+    border-radius: 10px;
+}
+
+/* Description Text */
+.description {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    max-width: 90%; /* Ensures text doesn't go too wide */
+    margin: 0 auto; /* Centers the text within the table cell */
+}
+
+.name {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adds some spacing below the name */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Photo Container Styles */
+.photo-container {
+    position: relative;
+    display: inline-block;
+    width: 300px; /* Set container size */
+    height: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(45deg, rgba(255,255,255,1), rgba(0,212,255,1)); /* Gradient background */
+    overflow: hidden; /* Ensures effects don't spill outside */
+}
+
+.photo-container::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #272727; /* Inner dark background */
+    border-radius: 9px; /* Slightly smaller radius for the inner effect */
+    transition: 0.5s;
+    z-index: 1; /* Keep it above the gradient and below the image */
+}
+
+.photo-container:hover::before {
+    opacity: 0.7;
+}
+
+.photo-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,rgba(255,255,255,1), rgba(2,0,36,1), rgba(9,9,121,1), rgba(0,212,255,1)); /* Gradient glow */
+    border-radius: 10px;
+    transition: 0.5s;
+    opacity: 0;
+    filter: blur(20px);
+    z-index: 0; /* Keep it below the image and before the ::before */
+}
+
+.photo-container:hover::after {
+    opacity: 1;
+}
+
+.photo-container img {
+    position: relative;
+    z-index: 2; /* Ensure the image is on top */
+    display: block;
+    width: 100%; /* Make the image fill the container width */
+    height: 100%; /* Make the image fill the container height */
+    object-fit: cover; /* Make sure the image fills the container without distortion */
+    border-radius: 10px; /* Match the container’s radius */
+}

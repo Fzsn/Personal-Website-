@@ -1,0 +1,268 @@
+/* Full-page height for the body and removal of default margins */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Adjust the height to 90vh to make the section shorter */
+.image-section {
+    position: relative;
+    height: 90vh; /* Reduced from 100vh to make it shorter */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+}
+
+/* Header container setup */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Logo styling */
+.logo {
+    width: 10%;
+    height: auto;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: blue;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Zen Dots';
+}
+
+/* Background video settings */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Main text styles */
+.text {
+    color: #ffffff;
+    font-size: clamp(5rem, 7vw, 7rem);
+    font-family: 'Zen Dots';
+    margin: 0;
+    margin-top: 100px;
+}
+
+/* Subtitle styles */
+.subtext {
+    color: #f4f4f4;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 1rem;
+    margin-bottom: 90px;
+}
+
+/* Color block section styling */
+.color-block-section {
+    background: rgb(4,24,55);
+    background: radial-gradient(circle, rgba(4,24,55,1) 52%, rgba(2,0,36,1) 100%, rgba(0,0,0,1) 100%);
+    padding: 250px 50px;
+    text-align: center;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .text {
+        font-size: 3rem;
+    }
+
+    .subtext {
+        font-size: 1.5rem;
+    }
+
+    .color-block-section {
+        padding: 30px 10px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .text {
+        font-size: 2.5rem;
+    }
+
+    .subtext {
+        font-size: 1.2rem;
+    }
+
+    .color-block-section {
+        padding: 20px 5px;
+    }
+
+    .image {
+        width: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .background-video {
+        display: none;
+    }
+
+    .image-section {
+        background: url('images/fallback.jpg') no-repeat center center / cover;
+    }
+}
+
+/* Family section styling */
+.Family {
+    background-color: black;
+}
+
+/* Introduction text */
+.introduction {
+    color: #ffffff;
+    font-size: clamp(3rem, 3vw, 3rem);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+/* Button styling */
+.button {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 58%, rgba(0,212,255,1) 100%);
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
+.button span {
+    position: relative;
+    z-index: 1;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #272727;
+    border-radius: 9px;
+    transition: 0.5s;
+}
+
+.button:hover::before {
+    opacity: 0.7;
+}
+
+.button::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: linear-gradient(45deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 58%, rgba(0,212,255,1) 100%);
+    border-radius: 9px;
+    transition: 0.5s;
+    opacity: 0;
+    filter: blur(20px);
+}
+
+.button:hover:after {
+    opacity: 1;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Background image settings */
+body {
+    background-image: url(images/backgroundpic.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    color: white;
+    background-color: black;
+    padding-top: 150px;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 1px;
+    background-color: black;
+    height: 150px;
+}
+
+/* Logo container styling */
+.logo-container .logo {
+    height: 200px;
+    width: auto;
+    margin-left: 25px;
+}
+
+/* Navigation styles */
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: #004aad;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav .nav-links li a:hover {
+    color: lightblue;
+}
+
+/* Table styling */
+.table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 30px;
+}
